@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import PersonInfo from './components/PersonInfo';
+import ShowXY from './components/ShowXY';
+import React , {useState} from 'react'
 
-function App() {
+
+export default function  App() {
+ 
+  const[showData,changeState] = useState(true);
+  const btnStyle1={
+
+    backgroundColor: "#282c34",
+    width: "100px",
+    height: "50px",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "calc(10px + 2vmin)",
+    color: "blueviolet"
+  }
+  
+
+ 
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PersonInfo/>
+     {showData ? <ShowXY/>: <h1>Nodata</h1>}
+    <button style = {btnStyle1} onClick={()=>changeState(!showData)}>Toggle</button>
+
     </div>
+    
   );
 }
 
-export default App;

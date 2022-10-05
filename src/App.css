@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.btcs{
+  background-color: #282c34;
+  width: 100px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: blueviolet;
+}
